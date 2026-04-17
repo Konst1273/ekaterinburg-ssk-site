@@ -1,30 +1,181 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>ССК - строительная компания в Екатеринбурге</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .hero {
+      background-color: #1a2744;
+      color: #ffffff;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+    .hero p {
+      opacity: 0.85;
+      font-size: 1.1rem;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .primary-button {
+      background-color: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .secondary-button {
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      background-color: transparent;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .about {
+      background-color: #ffffff;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .trust-badges {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .services {
+      background-color: #f8fafc;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 28px;
+    }
+    .reviews {
+      background-color: #ffffff;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .rating {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .contacts {
+      background-color: #f8fafc;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .final-cta {
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .footer {
+      background-color: #1a2744;
+      color: #ffffff;
+      padding: 72px 20px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Roboto, sans-serif; margin: 0; padding: 0; background-color: #f7f7f7; color: #333;">
-  <header style="background-color: #2447a5; color: #fff; padding: 20px; text-align: center;">
-    <h1 style="margin: 0;">ССК - Екатеринбург</h1>
-    <a href="tel:+7 (343) 226-47-15" style="display: block; font-size: 24px; font-weight: bold; margin: 10px auto; padding: 10px; border: none; border-radius: 5px; background-color: #337ab7; color: #fff; text-decoration: none;">+7 (343) 226-47-15</a>
-  </header>
-  <section style="padding: 20px; background-color: #fff;">
-    <p style="margin: 0;">ССК - строительная компания в Екатеринбурге, специализирующаяся на строительстве.</p>
-  </section>
-  <section style="padding: 20px; background-color: #f7f7f7;">
-    <h2 style="margin: 0;">Отзывы</h2>
-    <p style="margin: 0;">Рейтинг: <span style="font-weight: bold; color: #337ab7;">4.3</span> / 5 (по данным 2GIS, <span style="font-weight: bold;">19</span> отзывов)</p>
-  </section>
-  <section style="padding: 20px; background-color: #fff;">
-    <h2 style="margin: 0;">Контакты</h2>
-    <p style="margin: 0;">Телефон: <a href="tel:+7 (343) 226-47-15" style="text-decoration: none; color: #337ab7;">+7 (343) 226-47-15</a></p>
-    <p style="margin: 0;">Email: <a href="mailto:info@stroydom-ekb.ru" style="text-decoration: none; color: #337ab7;">info@stroydom-ekb.ru</a></p>
-    <p style="margin: 0;">Сайт: <a href="https://stroydom-ekb.ru/page/contacts/" style="text-decoration: none; color: #337ab7;">https://stroydom-ekb.ru/page/contacts/</a></p>
-  </section>
-  <footer style="background-color: #2447a5; color: #fff; padding: 10px; text-align: center;">
-    <p style="margin: 0;">ССК - Екатеринбург</p>
-  </footer>
+<body>
+  <div class="hero">
+    <h1>ССК - Екатеринбург</h1>
+    <p>Строительная компания в Екатеринбурге</p>
+    <div class="buttons">
+      <a href="tel:+7 (343) 226-47-15" class="primary-button">Позвонить</a>
+      <a href="mailto:info@stroydom-ekb.ru" class="secondary-button">Получить смету</a>
+    </div>
+  </div>
+  <div class="about">
+    <h2>О компании</h2>
+    <p>ССК - строительная компания в Екатеринбурге, обладающая опытом и надёжностью. Мы предоставляем услуги по строительству в Екатеринбурге и окрестностях.</p>
+    <div class="trust-badges">
+      <span>✅ Официальная компания</span>
+      <span>📋 Договор и гарантия</span>
+      <span>🏙️ Работаем в Екатеринбурге</span>
+    </div>
+  </div>
+  <div class="services">
+    <h2>Наши услуги</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>🏗️ Фундамент</h3>
+        <p>Услуги по фундаменту</p>
+        <p>от 50 000 ₽</p>
+      </div>
+      <div class="service-card">
+        <h3>🏠 Каркас</h3>
+        <p>Услуги по каркасу</p>
+        <p>от 30 000 ₽</p>
+      </div>
+      <div class="service-card">
+        <h3>🌆 Кровля</h3>
+        <p>Услуги по кровле</p>
+        <p>от 20 000 ₽</p>
+      </div>
+    </div>
+  </div>
+  <div class="reviews">
+    <h2>Отзывы клиентов</h2>
+    <div style="color: #f59e0b; font-size: 24px;">
+      <span>★★★★</span>
+      <span style="color: #ccc;">☆</span>
+    </div>
+    <p class="rating">4.3</p>
+    <p>19 отзывов на 2GIS</p>
+  </div>
+  <div class="contacts" id="contacts">
+    <h2>Контакты</h2>
+    <p><a href="tel:+7 (343) 226-47-15">+7 (343) 226-47-15</a></p>
+    <p><a href="mailto:info@stroydom-ekb.ru">info@stroydom-ekb.ru</a></p>
+    <p><a href="https://stroydom-ekb.ru/page/contacts/">https://stroydom-ekb.ru/page/contacts/</a></p>
+    <p><a href="https://t.me/stroitelstvo_domov_rf_bot?start=stroydom-ekb">telegram</a></p>
+    <p><a href="https://2gis.ru/search/ССК+Екатеринбург">Открыть в 2ГИС</a></p>
+  </div>
+  <div class="final-cta">
+    <h2>Готовы начать проект?</h2>
+    <a href="tel:+7 (343) 226-47-15" class="primary-button" style="background-color: #ffffff; color: #000;">Позвонить</a>
+  </div>
+  <div class="footer">
+    <p>ССК - Екатеринбург</p>
+    <p>+7 (343) 226-47-15</p>
+    <p>© 2025</p>
+  </div>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+    }));
+  </script>
 </body>
 </html>
