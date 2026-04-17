@@ -3,179 +3,597 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ССК — Строительная компания в Екатеринбурге</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>ССК - строительная компания в Екатеринбурге</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.6;
     }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── HERO ── */
     .hero {
-      background-color: #1a2744;
+      background: #1a2744;
       color: #ffffff;
-      padding: 72px 20px;
+      padding: 90px 20px 80px;
       text-align: center;
     }
+
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
     }
+
+    .hero h1 span {
+      color: #60a5fa;
+    }
+
     .hero p {
+      font-size: 1.15rem;
       opacity: 0.85;
-      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 36px;
     }
-    .buttons {
+
+    .hero-buttons {
       display: flex;
+      gap: 14px;
       justify-content: center;
-      gap: 20px;
+      flex-wrap: wrap;
     }
-    .primary-button {
-      background-color: #2563eb;
-      color: #ffffff;
-      border: none;
+
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
       border-radius: 8px;
       padding: 14px 28px;
       font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #2563eb;
+      transition: background 0.2s, transform 0.2s;
       cursor: pointer;
-      transition: 0.2s;
+      display: inline-block;
     }
-    .secondary-button {
-      border: 1px solid #ffffff;
-      color: #ffffff;
-      background-color: transparent;
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
       border-radius: 8px;
       padding: 14px 28px;
       font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #ffffff;
+      transition: background 0.2s, transform 0.2s;
       cursor: pointer;
-      transition: 0.2s;
+      display: inline-block;
     }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* ── ABOUT ── */
     .about {
-      background-color: #ffffff;
+      background: #ffffff;
       padding: 72px 20px;
-      text-align: center;
     }
+
+    .about h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 740px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 1.05rem;
+      color: #374151;
+    }
+
     .trust-badges {
       display: flex;
       gap: 20px;
       justify-content: center;
+      flex-wrap: wrap;
     }
+
+    .badge {
+      background: #f0f7ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1e3a5f;
+      flex: 1 1 220px;
+      max-width: 300px;
+    }
+
+    .badge span.icon {
+      font-size: 1.5rem;
+    }
+
+    /* ── SERVICES ── */
     .services {
-      background-color: #f8fafc;
+      background: #f8fafc;
       padding: 72px 20px;
-      text-align: center;
     }
-    .service-grid {
+
+    .services h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
+
     .service-card {
-      background-color: #ffffff;
+      background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       padding: 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .reviews {
-      background-color: #ffffff;
-      padding: 72px 20px;
-      text-align: center;
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
     }
-    .rating {
-      font-size: 3rem;
-      font-weight: bold;
+
+    .service-card .emoji {
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+      display: block;
     }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .service-price {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    /* ── CONTACTS ── */
     .contacts {
-      background-color: #f8fafc;
+      background: #f8fafc;
       padding: 72px 20px;
-      text-align: center;
     }
+
+    .contacts h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto 32px;
+    }
+
+    .contact-item {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-item .contact-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item .contact-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item .contact-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .contact-item a {
+      color: #2563eb;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: #1d4ed8;
+    }
+
+    .contacts-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-2gis {
+      background: #ffffff;
+      color: #2563eb;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #2563eb;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-2gis:hover {
+      background: #eff6ff;
+      transform: translateY(-2px);
+    }
+
+    .btn-telegram {
+      background: #0ea5e9;
+      color: #fff;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #0ea5e9;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-telegram:hover {
+      background: #0284c7;
+      border-color: #0284c7;
+      transform: translateY(-2px);
+    }
+
+    /* ── FINAL CTA ── */
     .final-cta {
-      background-color: #2563eb;
+      background: #2563eb;
       color: #ffffff;
-      padding: 72px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
-    .footer {
-      background-color: #1a2744;
-      color: #ffffff;
-      padding: 72px 20px;
-      text-align: center;
+
+    .final-cta h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
+
+    .final-cta p {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white {
+      background: #ffffff;
+      color: #2563eb;
+      border-radius: 8px;
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border: 2px solid #ffffff;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-white:hover {
+      background: #eff6ff;
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a2744;
+      color: #ffffff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer .footer-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    footer .footer-sub {
+      opacity: 0.7;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    footer .footer-phone {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    footer .footer-phone a {
+      color: #60a5fa;
+    }
+
+    footer .footer-copy {
+      opacity: 0.5;
+      font-size: 0.82rem;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 12px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 56px;
+      height: 4px;
+      background: #2563eb;
+      border-radius: 2px;
+      margin: 0 auto 32px;
+    }
+
+    /* ── MOBILE ── */
     @media (max-width: 768px) {
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero h1 { font-size: 2.1rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contacts-grid { grid-template-columns: 1fr; }
+      .trust-badges { flex-direction: column; align-items: center; }
+      .badge { max-width: 100%; width: 100%; }
+      .final-cta h2 { font-size: 1.6rem; }
+      .about h2, .services h2, .contacts h2 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>ССК - Екатеринбург</h1>
-    <p>Строительная компания в Екатеринбурге</p>
-    <div class="buttons">
-      <a href="tel:+7 (343) 226-47-15" class="primary-button">Позвонить</a>
-      <a href="mailto:info@stroydom-ekb.ru" class="secondary-button">Получить смету</a>
-    </div>
-  </div>
-  <div class="about">
-    <h2>О компании</h2>
-    <p>ССК - строительная компания в Екатеринбурге, обладающая опытом и надёжностью. Мы предоставляем услуги по строительству в Екатеринбурге и окрестностях.</p>
-    <div class="trust-badges">
-      <span>✅ Официальная компания</span>
-      <span>📋 Договор и гарантия</span>
-      <span>🏙️ Работаем в Екатеринбурге</span>
-    </div>
-  </div>
-  <div class="services">
-    <h2>Наши услуги</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>🏗️ Фундамент</h3>
-        <p>Услуги по фундаменту</p>
-        <p>от 50 000 ₽</p>
-      </div>
-      <div class="service-card">
-        <h3>🏠 Каркас</h3>
-        <p>Услуги по каркасу</p>
-        <p>от 30 000 ₽</p>
-      </div>
-      <div class="service-card">
-        <h3>🌆 Кровля</h3>
-        <p>Услуги по кровле</p>
-        <p>от 20 000 ₽</p>
+
+  <!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <h1>ССК — <span>Строительная компания</span><br>в Екатеринбурге</h1>
+      <p>Строим надёжно, качественно и в срок. Полный цикл строительных работ — от фундамента до сдачи объекта под ключ.</p>
+      <div class="hero-buttons">
+        <a href="tel:+73432264715" class="btn-primary">📞 Позвонить</a>
+        <a href="mailto:info@stroydom-ekb.ru" class="btn-secondary">Получить смету</a>
       </div>
     </div>
-  </div>
-  <div class="reviews">
-    <h2>Отзывы клиентов</h2>
-    <div style="color: #f59e0b; font-size: 24px;">
-      <span>★★★★</span>
-      <span style="color: #ccc;">☆</span>
+  </section>
+
+  <!-- ══════════════════════════════════ ABOUT ══════════════════════════════════ -->
+  <section class="about">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label">О нас</span>
+      </div>
+      <h2>О компании</h2>
+      <div class="divider"></div>
+      <p>
+        ССК — профессиональная строительная компания в Екатеринбурге с многолетним опытом реализации проектов любой сложности.
+        Мы строим частные дома, коммерческие объекты и занимаемся комплексной отделкой, обеспечивая каждому клиенту индивидуальный подход и прозрачное ценообразование.
+        Наша репутация в Екатеринбурге основана на честности, точном соблюдении сроков и неизменно высоком качестве работ.
+      </p>
+      <div class="trust-badges">
+        <div class="badge">
+          <span class="icon">✅</span>
+          <span>Официальная компания</span>
+        </div>
+        <div class="badge">
+          <span class="icon">📋</span>
+          <span>Договор и гарантия</span>
+        </div>
+        <div class="badge">
+          <span class="icon">🏙️</span>
+          <span>Работаем в Екатеринбурге</span>
+        </div>
+      </div>
     </div>
-    <p class="rating">4.3</p>
-    <p>19 отзывов на 2GIS</p>
-  </div>
-  <div class="contacts" id="contacts">
-    <h2>Контакты</h2>
-    <p><a href="tel:+7 (343) 226-47-15">+7 (343) 226-47-15</a></p>
-    <p><a href="mailto:info@stroydom-ekb.ru">info@stroydom-ekb.ru</a></p>
-    <p><a href="https://stroydom-ekb.ru/page/contacts/">https://stroydom-ekb.ru/page/contacts/</a></p>
-    <p><a href="https://t.me/stroitelstvo_domov_rf_bot?start=stroydom-ekb">telegram</a></p>
-    <p><a href="https://2gis.ru/search/ССК+Екатеринбург">Открыть в 2ГИС</a></p>
-  </div>
-  <div class="final-cta">
-    <h2>Готовы начать проект?</h2>
-    <a href="tel:+7 (343) 226-47-15" class="primary-button" style="background-color: #ffffff; color: #000;">Позвонить</a>
-  </div>
-  <div class="footer">
-    <p>ССК - Екатеринбург</p>
-    <p>+7 (343) 226-47-15</p>
-    <p>© 2025</p>
-  </div>
+  </section>
+
+  <!-- ══════════════════════════════════ SERVICES ══════════════════════════════════ -->
+  <section class="services">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label">Что мы делаем</span>
+      </div>
+      <h2>Наши услуги</h2>
+      <div class="divider"></div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <span class="emoji">🏗️</span>
+          <h3>Фундамент и нулевой цикл</h3>
+          <p>Проектирование и заливка ленточных, плитных и свайных фундаментов с полным геологическим расчётом.</p>
+          <div class="service-price">от 85 000 ₽</div>
+        </div>
+
+        <div class="service-card">
+          <span class="emoji">🏠</span>
+          <h3>Строительство домов под ключ</h3>
+          <p>Возводим каркасные, кирпичные и газобетонные дома — полный цикл от проекта до сдачи объекта.</p>
+          <div class="service-price">от 1 500 000 ₽</div>
+        </div>
+
+        <div class="service-card">
+          <span class="emoji">🔧</span>
+          <h3>Кровельные работы</h3>
+          <p>Монтаж и ремонт кровли любой сложности: металлочерепица, мягкая кровля, профнастил, плоские крыши.</p>
+          <div class="service-price">от 45 000 ₽</div>
+        </div>
+
+        <div class="service-card">
+          <span class="emoji">🪟</span>
+          <h3>Отделка и ремонт</h3>
+          <p>Внутренняя и фасадная отделка: черновая, чистовая и декоративная — под ключ или по отдельным видам работ.</p>
+          <div class="service-price">от 2 500 ₽/м²</div>
+        </div>
+
+        <div class="service-card">
+          <span class="emoji">🧱</span>
+          <h3>Коммерческое строительство</h3>
+          <p>Проектирование и строительство складов, офисных зданий, производственных и торговых объектов.</p>
+          <div class="service-price">от 5 000 000 ₽</div>
+        </div>
+
+        <div class="service-card">
+          <span class="emoji">📐</span>
+          <h3>Проектирование</h3>
+          <p>Разработка архитектурных и конструктивных проектов, сметная документация, согласование в госорганах.</p>
+          <div class="service-price">от 35 000 ₽</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ CONTACTS ══════════════════════════════════ -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <div style="text-align:center;">
+        <span class="section-label">Свяжитесь с нами</span>
+      </div>
+      <h2>Контакты</h2>
+      <div class="divider"></div>
+      <div class="contacts-grid">
+
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <div class="contact-label">Телефон</div>
+            <div class="contact-value"><a href="tel:+73432264715">+7 (343) 226-47-15</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <div class="contact-label">Электронная почта</div>
+            <div class="contact-value"><a href="mailto:info@stroydom-ekb.ru">info@stroydom-ekb.ru</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">🌐</span>
+          <div>
+            <div class="contact-label">Сайт компании</div>
+            <div class="contact-value"><a href="https://stroydom-ekb.ru/page/contacts/" target="_blank">stroydom-ekb.ru</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <div class="contact-label">Город</div>
+            <div class="contact-value">Екатеринбург</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="contacts-actions">
+        <a href="https://2gis.ru/search/ССК+Екатеринбург" target="_blank" class="btn-2gis">
+          🗺️ Открыть в 2ГИС
+        </a>
+        <a href="https://t.me/stroitelstvo_domov_rf_bot?start=stroydom-ekb" target="_blank" class="btn-telegram">
+          ✈️ Написать в Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ FINAL CTA ══════════════════════════════════ -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Готовы начать проект?</h2>
+      <p>Оставьте заявку прямо сейчас — наш специалист свяжется с вами и бесплатно рассчитает стоимость работ.</p>
+      <a href="tel:+73432264715" class="btn-white">📞 Позвонить нам</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ FOOTER ══════════════════════════════════ -->
+  <footer>
+    <div class="footer-name">ССК — Строительная компания</div>
+    <div class="footer-sub">Екатеринбург</div>
+    <div class="footer-phone"><a href="tel:+73432264715">+7 (343) 226-47-15</a></div>
+    <div class="footer-copy">© 2025 ССК. Все права защищены.</div>
+  </footer>
+
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
       e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
     }));
   </script>
+
 </body>
 </html>
