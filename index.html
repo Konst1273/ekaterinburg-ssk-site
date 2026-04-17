@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ССК — Строительная компания в Екатеринбурге</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,129 +31,135 @@
       text-align: center;
     }
 
+    .hero__label {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.35);
+      border: 1px solid rgba(37, 99, 235, 0.6);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: #93c5fd;
+    }
+
     .hero h1 {
-      font-size: 3rem;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       font-weight: 800;
       line-height: 1.15;
       margin-bottom: 18px;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.02em;
     }
 
-    .hero h1 span {
-      color: #60a5fa;
-    }
+    .hero h1 span { color: #60a5fa; }
 
-    .hero p {
-      font-size: 1.15rem;
+    .hero__sub {
+      font-size: 1.1rem;
       opacity: 0.85;
-      max-width: 560px;
-      margin: 0 auto 36px;
+      max-width: 600px;
+      margin: 0 auto 40px;
     }
 
-    .hero-buttons {
+    .hero__buttons {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
     }
 
     .btn-primary {
       background: #2563eb;
       color: #fff;
-      border-radius: 8px;
-      padding: 14px 28px;
-      font-weight: 600;
-      font-size: 1rem;
-      border: 2px solid #2563eb;
-      transition: background 0.2s, transform 0.2s;
-      cursor: pointer;
-      display: inline-block;
+      border-color: #2563eb;
     }
 
-    .btn-primary:hover {
-      background: #1d4ed8;
-      border-color: #1d4ed8;
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; transform: translateY(-2px); }
 
     .btn-secondary {
       background: transparent;
       color: #fff;
-      border-radius: 8px;
-      padding: 14px 28px;
-      font-weight: 600;
-      font-size: 1rem;
-      border: 2px solid #ffffff;
-      transition: background 0.2s, transform 0.2s;
-      cursor: pointer;
-      display: inline-block;
+      border-color: #fff;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-2px);
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+    .btn-white {
+      background: #fff;
+      color: #2563eb;
+      border-color: #fff;
+      font-size: 1.05rem;
+      padding: 16px 36px;
+    }
+
+    .btn-white:hover { background: #e0ecff; transform: translateY(-2px); }
+
+    /* ── SECTION BASE ── */
+    .section { padding: 72px 20px; }
+    .section--white { background: #ffffff; }
+    .section--light { background: #f8fafc; }
+
+    .section__title {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .section__subtitle {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-bottom: 48px;
+      max-width: 580px;
     }
 
     /* ── ABOUT ── */
-    .about {
-      background: #ffffff;
-      padding: 72px 20px;
-    }
-
-    .about h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      max-width: 740px;
-      margin: 0 auto 40px;
-      text-align: center;
+    .about__text {
       font-size: 1.05rem;
+      line-height: 1.8;
       color: #374151;
+      max-width: 750px;
+      margin-bottom: 44px;
     }
 
     .trust-badges {
       display: flex;
       gap: 20px;
-      justify-content: center;
       flex-wrap: wrap;
     }
 
-    .badge {
-      background: #f0f7ff;
-      border: 1px solid #bfdbfe;
+    .trust-badge {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
       border-radius: 12px;
       padding: 18px 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-weight: 600;
       font-size: 0.95rem;
-      color: #1e3a5f;
-      flex: 1 1 220px;
-      max-width: 300px;
+      flex: 1;
+      min-width: 200px;
+      transition: box-shadow 0.2s;
     }
 
-    .badge span.icon {
-      font-size: 1.5rem;
-    }
+    .trust-badge:hover { box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
+
+    .trust-badge__icon { font-size: 1.6rem; }
 
     /* ── SERVICES ── */
-    .services {
-      background: #f8fafc;
-      padding: 72px 20px;
-    }
-
-    .services h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -166,157 +172,118 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       padding: 28px;
       transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 3px solid #2563eb;
     }
 
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.13); }
 
-    .service-card .emoji {
-      font-size: 2.6rem;
-      margin-bottom: 14px;
-      display: block;
-    }
+    .service-card__icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
 
     .service-card h3 {
       font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: #1f2937;
     }
 
-    .service-card p {
-      font-size: 0.9rem;
+    .service-card__desc {
+      font-size: 0.92rem;
       color: #6b7280;
+      line-height: 1.6;
       margin-bottom: 16px;
-      line-height: 1.5;
     }
 
-    .service-price {
-      font-size: 1rem;
-      font-weight: 700;
+    .service-card__price {
+      display: inline-block;
+      background: #eff6ff;
       color: #2563eb;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
 
     /* ── CONTACTS ── */
-    .contacts {
-      background: #f8fafc;
-      padding: 72px 20px;
-    }
-
-    .contacts h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
     .contacts-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
-      max-width: 800px;
-      margin: 0 auto 32px;
     }
 
-    .contact-item {
+    .contact-card {
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       padding: 28px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
     }
 
-    .contact-item .contact-icon {
-      font-size: 1.8rem;
-      flex-shrink: 0;
-    }
-
-    .contact-item .contact-label {
-      font-size: 0.82rem;
+    .contact-card__label {
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #9ca3af;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 4px;
+      letter-spacing: 0.07em;
+      color: #9ca3af;
+      margin-bottom: 8px;
     }
 
-    .contact-item .contact-value {
-      font-size: 1rem;
-      font-weight: 600;
+    .contact-card__value {
+      font-size: 1.1rem;
+      font-weight: 700;
       color: #1f2937;
     }
 
-    .contact-item a {
-      color: #2563eb;
-      transition: color 0.2s;
-    }
+    .contact-card__value a { color: #2563eb; }
+    .contact-card__value a:hover { text-decoration: underline; }
 
-    .contact-item a:hover {
-      color: #1d4ed8;
-    }
+    .contact-card__icon { font-size: 1.5rem; margin-bottom: 12px; display: block; }
 
     .contacts-actions {
       display: flex;
-      gap: 14px;
-      justify-content: center;
+      gap: 16px;
       flex-wrap: wrap;
+      margin-top: 32px;
     }
 
-    .btn-2gis {
-      background: #ffffff;
+    .btn-outline {
+      background: #fff;
       color: #2563eb;
-      border-radius: 8px;
-      padding: 14px 28px;
-      font-weight: 600;
-      font-size: 1rem;
       border: 2px solid #2563eb;
-      transition: background 0.2s, transform 0.2s;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-2gis:hover {
-      background: #eff6ff;
-      transform: translateY(-2px);
-    }
-
-    .btn-telegram {
-      background: #0ea5e9;
-      color: #fff;
       border-radius: 8px;
-      padding: 14px 28px;
+      padding: 13px 26px;
       font-weight: 600;
-      font-size: 1rem;
-      border: 2px solid #0ea5e9;
-      transition: background 0.2s, transform 0.2s;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-block;
     }
 
-    .btn-telegram:hover {
-      background: #0284c7;
-      border-color: #0284c7;
-      transform: translateY(-2px);
+    .btn-outline:hover { background: #2563eb; color: #fff; transform: translateY(-2px); }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 13px 22px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1f2937;
+      transition: all 0.2s;
     }
+
+    .social-link:hover { border-color: #2563eb; color: #2563eb; transform: translateY(-2px); }
 
     /* ── FINAL CTA ── */
     .final-cta {
       background: #2563eb;
-      color: #ffffff;
+      color: #fff;
       padding: 80px 20px;
       text-align: center;
     }
 
     .final-cta h2 {
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
       font-weight: 800;
       margin-bottom: 14px;
     }
@@ -325,273 +292,250 @@
       font-size: 1.05rem;
       opacity: 0.9;
       margin-bottom: 36px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-white {
-      background: #ffffff;
-      color: #2563eb;
-      border-radius: 8px;
-      padding: 16px 36px;
-      font-weight: 700;
-      font-size: 1.05rem;
-      border: 2px solid #ffffff;
-      transition: background 0.2s, transform 0.2s;
-      cursor: pointer;
-      display: inline-block;
-    }
-
-    .btn-white:hover {
-      background: #eff6ff;
-      transform: translateY(-2px);
     }
 
     /* ── FOOTER ── */
     footer {
       background: #1a2744;
-      color: #ffffff;
+      color: #fff;
       text-align: center;
       padding: 40px 20px;
     }
 
-    footer .footer-name {
+    .footer__name {
       font-size: 1.3rem;
       font-weight: 800;
       margin-bottom: 6px;
     }
 
-    footer .footer-sub {
-      opacity: 0.7;
+    .footer__city {
       font-size: 0.9rem;
-      margin-bottom: 6px;
+      opacity: 0.65;
+      margin-bottom: 10px;
     }
 
-    footer .footer-phone {
+    .footer__phone {
+      font-size: 1rem;
       font-weight: 600;
-      font-size: 0.95rem;
+      color: #93c5fd;
       margin-bottom: 14px;
     }
 
-    footer .footer-phone a {
-      color: #60a5fa;
+    .footer__copy {
+      font-size: 0.8rem;
+      opacity: 0.45;
     }
 
-    footer .footer-copy {
-      opacity: 0.5;
-      font-size: 0.82rem;
-    }
-
-    /* ── SECTION LABEL ── */
-    .section-label {
-      display: inline-block;
-      background: #eff6ff;
-      color: #2563eb;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      border-radius: 100px;
-      padding: 5px 14px;
-      margin-bottom: 12px;
-    }
-
-    /* ── DIVIDER ── */
     .divider {
-      width: 56px;
+      width: 60px;
       height: 4px;
       background: #2563eb;
       border-radius: 2px;
-      margin: 0 auto 32px;
+      margin: 0 auto 40px;
     }
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.1rem; }
       .services-grid { grid-template-columns: 1fr; }
       .contacts-grid { grid-template-columns: 1fr; }
-      .trust-badges { flex-direction: column; align-items: center; }
-      .badge { max-width: 100%; width: 100%; }
-      .final-cta h2 { font-size: 1.6rem; }
-      .about h2, .services h2, .contacts h2 { font-size: 1.6rem; }
+      .trust-badges { flex-direction: column; }
+      .hero__buttons { flex-direction: column; align-items: center; }
+      .hero__buttons .btn { width: 100%; max-width: 320px; text-align: center; }
+      .contacts-actions { flex-direction: column; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════
+       1. HERO
+  ══════════════════════════════════════════ -->
   <section class="hero">
     <div class="container">
-      <h1>ССК — <span>Строительная компания</span><br>в Екатеринбурге</h1>
-      <p>Строим надёжно, качественно и в срок. Полный цикл строительных работ — от фундамента до сдачи объекта под ключ.</p>
-      <div class="hero-buttons">
-        <a href="tel:+73432264715" class="btn-primary">📞 Позвонить</a>
-        <a href="mailto:info@stroydom-ekb.ru" class="btn-secondary">Получить смету</a>
+      <div class="hero__label">🏗 Строительная компания · Екатеринбург</div>
+      <h1>ССК —<br /><span>Строим в Екатеринбурге</span></h1>
+      <p class="hero__sub">
+        Надёжный подрядчик полного цикла: от проектирования до сдачи объекта под ключ.
+        Принимаем заявки круглосуточно.
+      </p>
+      <div class="hero__buttons">
+        <a href="tel:+73432264715" class="btn btn-primary">📞 Позвонить</a>
+        <a href="mailto:info@stroydom-ekb.ru" class="btn btn-secondary">📋 Получить смету</a>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ ABOUT ══════════════════════════════════ -->
-  <section class="about">
+  <!-- ══════════════════════════════════════════
+       2. О КОМПАНИИ
+  ══════════════════════════════════════════ -->
+  <section class="section section--white">
     <div class="container">
-      <div style="text-align:center;">
-        <span class="section-label">О нас</span>
-      </div>
-      <h2>О компании</h2>
-      <div class="divider"></div>
-      <p>
-        ССК — профессиональная строительная компания в Екатеринбурге с многолетним опытом реализации проектов любой сложности.
-        Мы строим частные дома, коммерческие объекты и занимаемся комплексной отделкой, обеспечивая каждому клиенту индивидуальный подход и прозрачное ценообразование.
-        Наша репутация в Екатеринбурге основана на честности, точном соблюдении сроков и неизменно высоком качестве работ.
+      <h2 class="section__title">О компании</h2>
+      <div class="divider" style="margin: 0 0 32px;"></div>
+      <p class="about__text">
+        ССК — строительная компания с многолетним опытом работы в Екатеринбурге и Свердловской области.
+        Мы специализируемся на строительстве жилых домов, промышленных объектов и выполнении отделочных работ
+        любой сложности. Наша команда профессионалов гарантирует качество на каждом этапе — от закладки
+        фундамента до финальной сдачи объекта. Мы работаем официально, заключаем договор и несём полную
+        ответственность за результат перед каждым клиентом.
       </p>
       <div class="trust-badges">
-        <div class="badge">
-          <span class="icon">✅</span>
+        <div class="trust-badge">
+          <span class="trust-badge__icon">✅</span>
           <span>Официальная компания</span>
         </div>
-        <div class="badge">
-          <span class="icon">📋</span>
+        <div class="trust-badge">
+          <span class="trust-badge__icon">📋</span>
           <span>Договор и гарантия</span>
         </div>
-        <div class="badge">
-          <span class="icon">🏙️</span>
+        <div class="trust-badge">
+          <span class="trust-badge__icon">🏙️</span>
           <span>Работаем в Екатеринбурге</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ SERVICES ══════════════════════════════════ -->
-  <section class="services">
+  <!-- ══════════════════════════════════════════
+       3. УСЛУГИ
+  ══════════════════════════════════════════ -->
+  <section class="section section--light">
     <div class="container">
-      <div style="text-align:center;">
-        <span class="section-label">Что мы делаем</span>
-      </div>
-      <h2>Наши услуги</h2>
-      <div class="divider"></div>
+      <h2 class="section__title">Наши услуги</h2>
+      <p class="section__subtitle">Строим качественно, в срок и по договору — от фундамента до кровли.</p>
       <div class="services-grid">
 
         <div class="service-card">
-          <span class="emoji">🏗️</span>
-          <h3>Фундамент и нулевой цикл</h3>
-          <p>Проектирование и заливка ленточных, плитных и свайных фундаментов с полным геологическим расчётом.</p>
-          <div class="service-price">от 85 000 ₽</div>
+          <span class="service-card__icon">🏗️</span>
+          <h3>Фундамент</h3>
+          <p class="service-card__desc">Проектирование и заливка фундаментов любого типа: ленточный, свайный, монолитная плита.</p>
+          <span class="service-card__price">Цена по запросу</span>
         </div>
 
         <div class="service-card">
-          <span class="emoji">🏠</span>
-          <h3>Строительство домов под ключ</h3>
-          <p>Возводим каркасные, кирпичные и газобетонные дома — полный цикл от проекта до сдачи объекта.</p>
-          <div class="service-price">от 1 500 000 ₽</div>
+          <span class="service-card__icon">🪵</span>
+          <h3>Каркас и стены</h3>
+          <p class="service-card__desc">Возведение несущих конструкций из кирпича, газобетона, бруса или металлокаркаса.</p>
+          <span class="service-card__price">Цена по запросу</span>
         </div>
 
         <div class="service-card">
-          <span class="emoji">🔧</span>
+          <span class="service-card__icon">🏠</span>
           <h3>Кровельные работы</h3>
-          <p>Монтаж и ремонт кровли любой сложности: металлочерепица, мягкая кровля, профнастил, плоские крыши.</p>
-          <div class="service-price">от 45 000 ₽</div>
+          <p class="service-card__desc">Монтаж кровли под ключ: металлочерепица, мягкая кровля, профнастил. Гарантия на материалы и работы.</p>
+          <span class="service-card__price">Цена по запросу</span>
         </div>
 
         <div class="service-card">
-          <span class="emoji">🪟</span>
-          <h3>Отделка и ремонт</h3>
-          <p>Внутренняя и фасадная отделка: черновая, чистовая и декоративная — под ключ или по отдельным видам работ.</p>
-          <div class="service-price">от 2 500 ₽/м²</div>
+          <span class="service-card__icon">🎨</span>
+          <h3>Отделочные работы</h3>
+          <p class="service-card__desc">Внутренняя и внешняя отделка помещений любой сложности: штукатурка, покраска, облицовка.</p>
+          <span class="service-card__price">Цена по запросу</span>
         </div>
 
         <div class="service-card">
-          <span class="emoji">🧱</span>
-          <h3>Коммерческое строительство</h3>
-          <p>Проектирование и строительство складов, офисных зданий, производственных и торговых объектов.</p>
-          <div class="service-price">от 5 000 000 ₽</div>
-        </div>
-
-        <div class="service-card">
-          <span class="emoji">📐</span>
+          <span class="service-card__icon">📐</span>
           <h3>Проектирование</h3>
-          <p>Разработка архитектурных и конструктивных проектов, сметная документация, согласование в госорганах.</p>
-          <div class="service-price">от 35 000 ₽</div>
+          <p class="service-card__desc">Разработка индивидуальных проектов домов и коммерческих объектов, каталог готовых решений 2026.</p>
+          <span class="service-card__price">Цена по запросу</span>
+        </div>
+
+        <div class="service-card">
+          <span class="service-card__icon">🔧</span>
+          <h3>Строительство под ключ</h3>
+          <p class="service-card__desc">Полный цикл: проект, фундамент, коробка, кровля, отделка — один подрядчик, один договор.</p>
+          <span class="service-card__price">Цена по запросу</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ CONTACTS ══════════════════════════════════ -->
-  <section class="contacts" id="contacts">
+  <!-- ══════════════════════════════════════════
+       5. КОНТАКТЫ
+  ══════════════════════════════════════════ -->
+  <section class="section section--light" id="contacts">
     <div class="container">
-      <div style="text-align:center;">
-        <span class="section-label">Свяжитесь с нами</span>
-      </div>
-      <h2>Контакты</h2>
-      <div class="divider"></div>
+      <h2 class="section__title">Контакты</h2>
+      <p class="section__subtitle">Свяжитесь с нами любым удобным способом — отвечаем круглосуточно.</p>
       <div class="contacts-grid">
 
-        <div class="contact-item">
-          <span class="contact-icon">📞</span>
-          <div>
-            <div class="contact-label">Телефон</div>
-            <div class="contact-value"><a href="tel:+73432264715">+7 (343) 226-47-15</a></div>
+        <div class="contact-card">
+          <span class="contact-card__icon">📞</span>
+          <div class="contact-card__label">Телефон</div>
+          <div class="contact-card__value">
+            <a href="tel:+73432264715">+7 (343) 226-47-15</a>
           </div>
         </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">✉️</span>
-          <div>
-            <div class="contact-label">Электронная почта</div>
-            <div class="contact-value"><a href="mailto:info@stroydom-ekb.ru">info@stroydom-ekb.ru</a></div>
+        <div class="contact-card">
+          <span class="contact-card__icon">✉️</span>
+          <div class="contact-card__label">Электронная почта</div>
+          <div class="contact-card__value">
+            <a href="mailto:info@stroydom-ekb.ru">info@stroydom-ekb.ru</a>
           </div>
         </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">🌐</span>
-          <div>
-            <div class="contact-label">Сайт компании</div>
-            <div class="contact-value"><a href="https://stroydom-ekb.ru/page/contacts/" target="_blank">stroydom-ekb.ru</a></div>
+        <div class="contact-card">
+          <span class="contact-card__icon">🌐</span>
+          <div class="contact-card__label">Сайт</div>
+          <div class="contact-card__value">
+            <a href="https://stroydom-ekb.ru/page/contacts/" target="_blank" rel="noopener">stroydom-ekb.ru</a>
           </div>
         </div>
 
-        <div class="contact-item">
-          <span class="contact-icon">📍</span>
-          <div>
-            <div class="contact-label">Город</div>
-            <div class="contact-value">Екатеринбург</div>
-          </div>
+        <div class="contact-card">
+          <span class="contact-card__icon">📍</span>
+          <div class="contact-card__label">Адрес</div>
+          <div class="contact-card__value">ул. Красноармейская, 10, оф. 7/04<br />Екатеринбург</div>
         </div>
 
       </div>
+
       <div class="contacts-actions">
-        <a href="https://2gis.ru/search/ССК+Екатеринбург" target="_blank" class="btn-2gis">
-          🗺️ Открыть в 2ГИС
+        <a href="https://2gis.ru/search/ССК+Екатеринбург" target="_blank" rel="noopener" class="btn-outline">
+          🗺 Открыть в 2ГИС
         </a>
-        <a href="https://t.me/stroitelstvo_domov_rf_bot?start=stroydom-ekb" target="_blank" class="btn-telegram">
-          ✈️ Написать в Telegram
+        <a href="https://t.me/stroitelstvo_domov_rf_bot?start=stroydom-ekb" target="_blank" rel="noopener" class="social-link">
+          ✈️ Telegram-бот
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ FINAL CTA ══════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════
+       6. ФИНАЛЬНЫЙ CTA
+  ══════════════════════════════════════════ -->
   <section class="final-cta">
     <div class="container">
       <h2>Готовы начать проект?</h2>
-      <p>Оставьте заявку прямо сейчас — наш специалист свяжется с вами и бесплатно рассчитает стоимость работ.</p>
-      <a href="tel:+73432264715" class="btn-white">📞 Позвонить нам</a>
+      <p>Позвоните нам или отправьте заявку — рассчитаем смету бесплатно и без обязательств.</p>
+      <a href="tel:+73432264715" class="btn btn-white">📞 Позвонить прямо сейчас</a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ FOOTER ══════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════
+       7. FOOTER
+  ══════════════════════════════════════════ -->
   <footer>
-    <div class="footer-name">ССК — Строительная компания</div>
-    <div class="footer-sub">Екатеринбург</div>
-    <div class="footer-phone"><a href="tel:+73432264715">+7 (343) 226-47-15</a></div>
-    <div class="footer-copy">© 2025 ССК. Все права защищены.</div>
+    <div class="container">
+      <div class="footer__name">ССК</div>
+      <div class="footer__city">Строительная компания · Екатеринбург</div>
+      <div class="footer__phone">
+        <a href="tel:+73432264715" style="color: #93c5fd;">+7 (343) 226-47-15</a>
+      </div>
+      <div class="footer__copy">© 2025 ССК. Все права защищены. Екатеринбург.</div>
+    </div>
   </footer>
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-      e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
     }));
   </script>
 
